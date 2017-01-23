@@ -1,16 +1,21 @@
-<h1>Hello World!</h1>
+<h1>Homepage</h1>
 <input type="text" ng-model="search">
 <button
 	ng-click="dirList.toggles()">
 	Toggle list</button>
 <ul ng-if="dirList.toggle" class="fade">
 	<li
-		ng-repeat="item in dirList.list
-		| filter:search"
+		ng-repeat="item in dirList.list | filter:search"
 		ng-include="'person.html'">
 	</li>
 </ul>
-
+<ul ng-if="dirList.toggle" class="fade">
+	<li
+		ng-repeat="item in dirList.list
+		| filter:search">
+		<directory-person></directory-person>
+	</li>
+</ul>
 <form ng-submit="dirList.addPerson()">
 	<input
 		type="text"

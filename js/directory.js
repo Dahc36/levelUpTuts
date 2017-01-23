@@ -36,6 +36,12 @@ angular
 			});
 			dirList.name = null;
 			dirList.age = null;
+			//console.log(dirList.list);
 		};
 
+	})
+	.directive('directoryPerson', function(){
+		return {
+			templateUrl: 'directory-person.html'
+		}
 	});
