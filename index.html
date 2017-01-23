@@ -6,31 +6,11 @@
 	<!-- Angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<!-- JavaScript -->
 	<script src="js/directory.js"></script>
 </head>
-<body ng-controller="directoryController as dirList">
-
-	<input type="text" ng-model="search">
-	<ul>
-		<li
-			ng-repeat="item in dirList.list
-			| filter:search"
-			ng-include="'person.html'">
-		</li>
-	</ul>
-
-	<form ng-submit="dirList.addPerson()">
-		<input
-			type="text"
-			placeholder="Name"
-			ng-model="dirList.name">
-		<input
-			type="number"
-			placeholder="Age"
-			ng-model="dirList.age">
-		<input type="submit" value="Submit">
-	</form>
-
+<body>
+	<main ui-view></main>
 </body>
 </html>
